@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="facebook_app_id">695787399144376</string>
+    <string name="fb_login_protocol_scheme">fb837785737379769</string>
+    <string name="facebook_client_token">dd3ff222062afc522a5624603e55726e</string>
+    <string name="default_notification_channel_id" translatable="false">vitec_fcm_channel</string>
+</resources>

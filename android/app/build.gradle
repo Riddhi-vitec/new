@@ -1,0 +1,173 @@
+//import com.android.build.gradle.internal.tasks.FinalizeBundleTask
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin"
+    id "com.google.gms.google-services"
+    id "com.google.firebase.crashlytics"
+}
+
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file('local.properties')
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader('UTF-8') { reader ->
+        localProperties.load(reader)
+    }
+}
+
+def flutterRoot = localProperties.getProperty('flutter.sdk')
+if (flutterRoot == null) {
+    throw new GradleException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
+}
+
+def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
+if (flutterVersionCode == null) {
+    flutterVersionCode = '1'
+}
+
+def flutterVersionName = localProperties.getProperty('flutter.versionName')
+if (flutterVersionName == null) {
+    flutterVersionName = '1.0'
+}
+
+//apply plugin: 'com.android.application'
+//apply plugin: 'kotlin-android'
+//apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+//apply plugin: "com.google.gms.google-services"
+//apply plugin: "com.google.firebase.crashlytics"
+//apply plugin: 'com.android.application'
+//apply plugin: 'com.google.firebase.appdistribution'
+
+def keystoreProperties = new Properties()
+def keystorePropertiesFile = rootProject.file('key.properties')
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+}
+
+android {
+    namespace "com.vitec.bloc_template.prod"
+    compileSdkVersion 34
+    ndkVersion flutter.ndkVersion
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+    
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    defaultConfig {
+        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+        applicationId "com.vitec.bloc_template.prod"
+        // You can update the following values to match your application needs.
+        // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
+        minSdkVersion 23 //The plugin stripe and social sign in requires  minSdkVersion 21
+        targetSdkVersion 34 //The plugin stripe and social sign in requires  targetSdkVersion 33
+        multiDexEnabled true
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
+//        minSdk = flutter.minSdkVersion
+//        targetSdk = flutter.targetSdkVersion
+//        versionCode = flutter.versionCode
+//        versionName = flutter.versionName
+        multiDexEnabled = true
+    }
+    signingConfigs {
+        release {
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
+            storePassword keystoreProperties['storePassword']
+        }
+    }
+    buildTypes {
+        release {
+//            firebaseAppDistribution {
+//                serviceCredentialsFile =  System.getenv("CREDENTIAL_FILE_CONTENT")
+//                releaseNotesFile = 'This is CI/CD build'
+//                testers = 'rafia.chowdhury@vitec-visuals.com'
+//            }
+//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+//        applicationVariants.all { variant ->
+//            variant.outputs.all { output ->
+//                def architecture = output.getFilter(com.android.build.OutputFile.ABI)
+//                def newName
+//                newName = "${new Date().format('yyyyMMddhhmm')}_TemplatFlutterBloc_${variant.getFlavorName().capitalize()}-${variant.buildType.name}_V${versionName}(${versionCode})-${architecture}.apk"
+//
+//                outputFileName = newName
+//            }
+//
+//            tasks.named("sign${variant.name.capitalize()}Bundle", FinalizeBundleTask) {
+//                File file = finalBundleFile.asFile.get()
+//                File finalFile = new File(file.parentFile, "${new Date().format('yyyyMMddhhmm')}_TemplatFlutterBloc_${variant.getFlavorName().capitalize()}-${variant.buildType.name}_V${versionName}(${versionCode}).aab")
+//                finalBundleFile.set(finalFile)
+//            }
+//        }
+    }
+
+//    applicationVariants.all { variant ->
+//        variant.outputs.all { output ->
+//            def architecture = output.getFilter(com.android.build.OutputFile.ABI)
+//            def newName
+//            newName = "${new Date().format('yyyyMMddhhmm')}_VitecBlocTemplate_${variant.getFlavorName().capitalize()}-${variant.buildType.name}_V${versionName}(${versionCode})-${architecture}.apk"
+//
+//            outputFileName = newName
+//        }
+//
+//
+//        tasks.named("sign${variant.name.capitalize()}Bundle", FinalizeBundleTask) {
+//            File file = finalBundleFile.asFile.get()
+//            File finalFile = new File(file.parentFile, "${new Date().format('yyyyMMddhhmm')}_VitecBlocTemplate_${variant.getFlavorName().capitalize()}-${variant.buildType.name}_V${versionName}(${versionCode}).aab")
+//            finalBundleFile.set(finalFile)
+//        }
+//    }
+
+
+    // change this according to you app name
+    // it is a mechanism used to categorize and organize different flavors of an Android app into dimensions, typically for managing complex build configurations. Each dimension represented a set of related product flavors
+    flavorDimensions "Vitec Bloc Template"
+    // change this according to you app
+    productFlavors {
+        dev {
+            dimension "Vitec Bloc Template"
+            applicationId "com.vitec.bloc_template.dev"
+            resValue "string", "app_name", 'Vitec Bloc Template'
+            versionNameSuffix ".dev"
+        }
+        stage {
+            dimension "Vitec Bloc Template"
+            applicationId "com.vitec.bloc_template.stage"
+            resValue "string", "app_name", "Vitec Bloc Template"
+        }
+        prod {
+            dimension "Vitec Bloc Template"
+            applicationId "com.vitec.bloc_template.prod"
+            resValue "string", "app_name", "Vitec Bloc Template"
+        }
+    }
+}
+
+flutter {
+    source '../..'
+}
+
+dependencies {
+//    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation(platform("com.google.firebase:firebase-bom:32.3.1"))
+    implementation("com.google.firebase:firebase-auth-ktx")
+    implementation("com.google.android.gms:play-services-auth:20.7.0")
+    implementation("com.google.firebase:firebase-crashlytics-ktx")
+    implementation("com.google.firebase:firebase-analytics-ktx")
+    implementation 'com.facebook.android:facebook-login:latest.release'
+//    implementation 'com.github.jraska:wakelock-kotlin:3.0.0'
+    implementation "com.stripe:stripe-android:20.24.0" // Latest version
+
+}

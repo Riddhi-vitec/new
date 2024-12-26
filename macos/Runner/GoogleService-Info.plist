@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>60394012236-usibj9uhcrm2s04be2fvkj2crijrvnaf.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.60394012236-usibj9uhcrm2s04be2fvkj2crijrvnaf</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>60394012236-68mqudjmkm7tl5viiobr20eka4unptre.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCcR4hLxfrGbWd8_qYN6tnfW8LH1A6AeaI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>60394012236</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.templateFlutterMvvmRepoBloc.RunnerTests</string>
+	<key>PROJECT_ID</key>
+	<string>vitec-back-end-template</string>
+	<key>STORAGE_BUCKET</key>
+	<string>vitec-back-end-template.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:60394012236:ios:b6855d0ce0884838753ee9</string>
+</dict>
+</plist>

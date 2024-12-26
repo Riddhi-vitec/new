@@ -1,0 +1,114 @@
+{
+  "project_info": {
+    "project_number": "60394012236",
+    "project_id": "vitec-back-end-template",
+    "storage_bucket": "vitec-back-end-template.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:60394012236:android:90af6679844434f9753ee9",
+        "android_client_info": {
+          "package_name": "com.vitec.bloc_template.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "60394012236-68mqudjmkm7tl5viiobr20eka4unptre.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vitec.bloc_template.dev",
+            "certificate_hash": "5ba636f8ddb4e9c52bef6c0cca843e9c30ed2f83"
+          }
+        },
+        {
+          "client_id": "60394012236-sn1ne4pu1t6hhbj34cp4a8cafui7p9ph.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vitec.bloc_template.dev",
+            "certificate_hash": "2a88b4f99eb5ddb5af21be94125944dfe2d85729"
+          }
+        },
+        {
+          "client_id": "60394012236-vqu3d9ihg6slqddekoak6o01nqhtcq0q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGd5jlduZBU_OuU2qyqQvtccGvjQhTVZ0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "60394012236-vqu3d9ihg6slqddekoak6o01nqhtcq0q.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "60394012236-72qv5muhrkpgphi1t2i8bi108djsto94.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.vitecvisual.fluttertemplates"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:60394012236:android:3d74981af07e678c753ee9",
+        "android_client_info": {
+          "package_name": "com.vitec.bloc_template.prod"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "60394012236-irhnad5hgmtvfqef3sijcr7i70a6e1mt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vitec.bloc_template.prod",
+            "certificate_hash": "2a88b4f99eb5ddb5af21be94125944dfe2d85729"
+          }
+        },
+        {
+          "client_id": "60394012236-rclitqoind8abhc54mupn1577i43t5e5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vitec.bloc_template.prod",
+            "certificate_hash": "5ba636f8ddb4e9c52bef6c0cca843e9c30ed2f83"
+          }
+        },
+        {
+          "client_id": "60394012236-vqu3d9ihg6slqddekoak6o01nqhtcq0q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGd5jlduZBU_OuU2qyqQvtccGvjQhTVZ0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "60394012236-vqu3d9ihg6slqddekoak6o01nqhtcq0q.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "60394012236-72qv5muhrkpgphi1t2i8bi108djsto94.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.vitecvisual.fluttertemplates"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
